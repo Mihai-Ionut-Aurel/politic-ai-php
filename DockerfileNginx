@@ -1,0 +1,6 @@
+FROM nginx:alpine
+WORKDIR "/application"
+COPY /application ./
+RUN ls
+
+COPY /phpdocker/nginx/nginx.conf /etc/nginx/conf.d/default.conf

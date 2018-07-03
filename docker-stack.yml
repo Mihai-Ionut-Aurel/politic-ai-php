@@ -1,0 +1,20 @@
+version: "3.5"
+services:
+#    microservice:
+#      image: 'imihai/topic-modelling-ml:latest'
+#      ports:
+#        - '5777:5777'
+    php-fpm:
+      environment:
+        - DATABASE_IP=
+        - DATABASE_NAME=
+        - DATABASE_PORT=5432
+        - DATABASE_USERNAME=
+        - MICROSERVICE_URL=http://microservice:5777
+      image: 'imihai/politic-ai:latest'
+      ports:
+        - '9000:9000'
+    webserver:
+      image: 'imihai/politic-ai:nginx'
+      ports:
+        - '80:80'
